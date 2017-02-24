@@ -188,7 +188,9 @@ ifconfig-pool-persist ipp.txt
 # or bridge the TUN/TAP interface to the internet
 # in order for this to work properly).
 push "redirect-gateway def1"
-push "dhcp-option DNS 10.8.0.1"
+#push "dhcp-option DNS 10.8.0.1"
+push "dhcp-option DNS 8.8.8.8"
+push "dhcp-option DNS 8.8.4.4"
 
 # Certain Windows-specific network settings
 # can be pushed to clients, such as DNS
@@ -196,8 +198,8 @@ push "dhcp-option DNS 10.8.0.1"
 # http://openvpn.net/faq.html#dhcpcaveats
 # The addresses below refer to the public
 # DNS servers provided by opendns.com.
-;push "dhcp-option DNS 208.67.222.222"
-;push "dhcp-option DNS 208.67.220.220"
+#;push "dhcp-option DNS 208.67.222.222"
+#;push "dhcp-option DNS 208.67.220.220"
 
 # Uncomment this directive to allow different
 # clients to be able to "see" each other.
@@ -310,11 +312,6 @@ verb {{ openvpn_verb }}
 # Mask your settings by using a lower mtu.
 # Check your settings here: witch.valdikss.org.ru
 tun-mtu {{ openvpn_mtu }}
-
-# Set TLS settings
-# Only for openvpn 2.3.3 and >2.3.4
-{{ openvpn_tls_version_min }}
-{{ openvpn_tls_cipher }}
 
 # Change default network buffer size
 # Should increase tcp tunnel speed for openvpn < 2.3.9

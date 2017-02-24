@@ -4,8 +4,8 @@
 ################################################################################
 
 # common
-domain: (required)
-main_user_name: (required)
+domain: # insert DOMAIN NAME HERE
+main_user_name: deploy
 
 # admin email
 # fail2ban reports will be sent to this address
@@ -55,6 +55,7 @@ prosody_accounts:
 
 # openvpn
 openvpn_clients:
-  - laptop
-  - phone
-  - tablet
+  - caike-laptop
+  - caike-phone
+  - guest-laptop
+  - guest-phone

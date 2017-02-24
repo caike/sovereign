@@ -4,6 +4,15 @@
 Introduction
 ============
 
+This is a modification of the original script.
+
+**Customized for setting up a VPN on Ubuntu 14.04.5 x64**
+
+1. Add the host IP to the _hosts_ file.
+2. Add the domain name to the _group_vars/sovereign_ file
+3. Run `ansible-playbook -i hosts sovereign -e "ansible_user=root" prep-server.yml`
+4. Run `ansible-playbook -i hosts site.yml`
+
 Sovereign is a set of [Ansible](http://ansible.com) playbooks that you can use to build and maintain your own [personal cloud](http://www.urbandictionary.com/define.php?term=clown%20computing) based entirely on open source software, so you’re in control.
 
 If you’ve never used Ansible before, you might find these playbooks useful to learn from, since they show off a fair bit of what the tool can do.

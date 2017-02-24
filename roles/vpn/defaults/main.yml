@@ -21,6 +21,7 @@ openvpn_port: "1194"
 openvpn_protocol: "udp"
 openvpn_mtu: "1300"
 openvpn_verb: "3" # "0" for anonymity
-openvpn_tls_version_min: "tls-version-min 1.2"
-openvpn_tls_cipher: "tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256"
+# Not needed for OpenVPN 2.3.2
+#openvpn_tls_version_min: "tls-version-min 1.2"
+#openvpn_tls_cipher: "tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256"
 openvpn_clients: []
