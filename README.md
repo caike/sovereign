@@ -10,7 +10,7 @@ This is a modification of the original script.
 
 1. Add the host IP to the _hosts_ file.
 2. Add the domain name to the _group_vars/sovereign_ file
-3. Run `ansible-playbook -i hosts sovereign -e "ansible_user=root" prep-server.yml`
+3. Run `ansible-playbook -i hosts -u root prep-server.yml`
 4. Run `ansible-playbook -i hosts site.yml`
 
 Sovereign is a set of [Ansible](http://ansible.com) playbooks that you can use to build and maintain your own [personal cloud](http://www.urbandictionary.com/define.php?term=clown%20computing) based entirely on open source software, so you’re in control.
@@ -116,7 +116,7 @@ Your new account will be automatically set up for passwordless `sudo`. Or you ca
 ## On your local machine
 
 Ansible (the tool setting up your server) runs locally on your computer and sends commands to the remote server. Download this repository somewhere on your machine, either through `Clone or Download > Download ZIP` above, `wget`, or `git` as below
-    
+
     git clone https://github.com/sovereign/sovereign.git
 
 ### 4. Configure your installation
@@ -194,7 +194,7 @@ First, make sure you’ve [got Ansible 1.9.3+ installed](http://docs.ansible.com
 To run the whole dang thing:
 
     ansible-playbook -i ./hosts --ask-sudo-pass site.yml
-    
+
 If you chose to make a passwordless sudo deploy user, you can omit the `--ask-sudo-pass` argument.
 
 To run just one or more piece, use tags. I try to tag all my includes for easy isolated development. For example, to focus in on your firewall setup:
